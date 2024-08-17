@@ -15,13 +15,13 @@ while(True):
     if(ret):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        detection = detector.getPose(gray)
+        tags = detector.getTags(gray)
 
+        
 
-        for tag in detection:
+        for tag in tags:
             Utility.draw_box(frame, tag.corners)
-            print(tag.pose_t)
-            
+            print(tag.pose_R)
 
 
         cv2.imshow("frame", frame)

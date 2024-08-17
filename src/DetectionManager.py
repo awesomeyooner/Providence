@@ -23,7 +23,7 @@ class DetectionManager:
         )
 
 
-    def getPose(self, image):
+    def getTags(self, image):
         detection = self.detector.detect(
             img=image,
             estimate_tag_pose=True,

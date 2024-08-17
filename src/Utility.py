@@ -52,6 +52,10 @@ def draw_box(frame, corners):
 
     draw_line(frame, firstX, firstY, prevX, prevY)
 
+def draw_boxes(frame, tags):
+    for tag in tags:
+        draw_box(frame, tag.corners)
+        
 def draw_line(frame, x1, y1, x2, y2):
     cv2.line(
             frame, 
