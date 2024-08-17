@@ -1,5 +1,5 @@
 from pupil_apriltags import Detector
-from Utility import Constants
+from apriltag_detector.src.util.Utility import Constants
 
 
 class DetectionManager:
@@ -32,3 +32,6 @@ class DetectionManager:
         )
 
         return detection
+    
+    def hasTags(self, tags):
+        return len(tags) > 0
