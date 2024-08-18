@@ -1,6 +1,6 @@
-from util import DetectionManager
+from src.util import DetectionManager
 import cv2
-from util import Utility
+from src.util import Utility
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
