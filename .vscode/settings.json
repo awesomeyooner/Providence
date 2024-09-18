@@ -77,5 +77,6 @@
         "regex": "cpp",
         "ranges": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/dev/Documents/GitHub/Providence/cpp"
 }
