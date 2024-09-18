@@ -1,6 +1,8 @@
 <html>
     <head>
-        <title>Video Streaming </title>
+        <title>Video Streaming </title> 
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
     <body>
@@ -16,29 +18,13 @@
         </div>
 
 
-        <form action="{{ url_for('name')}}" method="post">
+        <!-- <form action="{{ url_for('name')}}" method="post"> -->
 
-        <input type="text" id="firstname" name="fname" placeholder="firstname">
-        <h1>{{ firstname }}</h1>
+        <!-- <input type="text" id="firstname" name="fname" placeholder="firstname"> -->
         
-    <script >
-
-        var ctx = document.getElementById("canvas").getContext('2d');
-        var img = new Image();
-        img.src = "{{ url_for('video_feed') }}";
-
-        // need only for static image
-        //img.onload = function(){   
-        //    ctx.drawImage(img, 0, 0);
-        //};
-
-        // need only for animated image
-        function refreshCanvas(){
-            ctx.drawImage(img, 0, 0);
-        };
-        window.setInterval("refreshCanvas()", 50);
-
-    </script>
+        <h1>The double value is: <span id="double-value"></span></h1>
+        
+    <script src="src/main.js"></script>
 
     </body>
 </html>

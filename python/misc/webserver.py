@@ -1,9 +1,12 @@
 import cv2
 import os
-from flask import Flask, request, render_template, render_template_string, Response
+import time
+from flask import Flask, request, render_template, render_template_string, Response, jsonify
 
 app = Flask(__name__)
 video_capture = cv2.VideoCapture(0)
+
+prevTime = 0
 
 def gen():    
     while True:
@@ -24,19 +27,13 @@ def video_feed():
     return Response(gen(),
                 mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/time')
+def time():
+    prevTime = time.time()
+    return jsonify(value=prevTime)
+
+
 # end of video stream
-
-@app.route('/name', methods =["GET", "POST"])
-def name():
-    # if request.method == "POST":
-    #    # getting input with name = fname in HTML form
-    #     first_name = request.form.get("fname")
-
-        
-    #     return "Your name is "+ first_name
-
-    first_name = request.form.get('fname')
-    return render_template("index.html", firstname =first_name)
 
 # @app.route('/name', methods =["GET", "POST"])
 # def bob():
