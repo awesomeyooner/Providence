@@ -2,15 +2,15 @@ import cv2
 import os
 import time
 import numpy as np
-from Constants import CameraConstants
+from src.Constants import CameraConstants
 
 class CameraManager:
 
     def __init__(self, index, framerate_limit = 30):
         self.camera = cv2.VideoCapture(index)
         
-        self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+        self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, CameraConstants.WIDTH)
+        self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, CameraConstants.HEIGHT)
 
         self.framerate = 0
         self.framerate_limit = framerate_limit
@@ -30,14 +30,13 @@ class CameraManager:
         return fps > self.framerate_limit
 
     def getFrame(self):
-        # if(self.isWithinFramerateLimit()):
-        #     self.framerate = 1 / (time.time() - self.prev_time)
-        #     self.prev_time = time.time()
+        if(False):
+            self.framerate = 1 / (time.time() - self.prev_time)
+            self.prev_time = time.time()
 
-        #     return self.camera.read()
-        # else:
-        #     return False, self.camera.read()[1]
-        return True, CameraConstants.BLANK
+            return self.camera.read()
+        else:
+            return False, CameraConstants.BLANK
     
     def getCompressedFrame(self):
         ret, image = self.getFrame()

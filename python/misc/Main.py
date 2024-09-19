@@ -2,8 +2,7 @@ import cv2
 import os
 import time
 from flask import Flask, request, render_template, render_template_string, Response, jsonify
-from src.CameraManager import CameraManager
-from src.Constants import CameraConstants
+from src.CameraManager import CameraManager 
 
 app = Flask(__name__)
 camera = CameraManager(0, 30)
