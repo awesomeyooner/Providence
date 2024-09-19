@@ -1,0 +1,3 @@
+/home/dev/Documents/GitHub/Providence/build/CMakeFiles/Main.dir
+/home/dev/Documents/GitHub/Providence/build/CMakeFiles/edit_cache.dir
+/home/dev/Documents/GitHub/Providence/build/CMakeFiles/rebuild_cache.dir
