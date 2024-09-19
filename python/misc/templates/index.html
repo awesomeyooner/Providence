@@ -3,6 +3,7 @@
         <title>Video Streaming </title> 
         <meta charset="UTF-8">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     </head>
 
     <body>
@@ -17,14 +18,78 @@
             <canvas id="canvas" width="640px" height="480px"></canvas>
         </div>
 
+        <form method="POST" action="{{ url_for('limitFPS') }}">
+            
+            <label>red</label>
+            <input type="range" min="0" max="255" value="0" id="red in">
+            <output id="red out"></output>
 
+            <label>fps</label>
+            <input type="range" min="1" max="40" value="0" id="fps in" name="fps">
+            <output id="fps out"></output>
+        </form>
+
+        <!-- <input type="range" min="0" max="255" value="0" id="red in">
+        <output id="red out"></output> -->
         <!-- <form action="{{ url_for('name')}}" method="post"> -->
 
-        <!-- <input type="text" id="firstname" name="fname" placeholder="firstname"> -->
+        <input type="text" id="firstname" name="fname" placeholder="firstname">
         
         <h1>The double value is: <span id="double-value"></span></h1>
         
-    <script src="src/main.js"></script>
+        <script>
+
+            var ctx = document.getElementById("canvas").getContext('2d');
+            var img = new Image();
+            img.src = "{{ url_for('video_feed') }}";
+
+            // need only for static image
+            //img.onload = function(){   
+            //    ctx.drawImage(img, 0, 0);
+            //};
+
+            const redIn = document.getElementById('red in');
+            const redOut = document.getElementById('red out');
+            
+            const fpsIn = document.getElementById('fps in');
+            const fpsOut = document.getElementById('fps out');
+
+            function updateFPS() {
+                fpsOut.innerText = fpsIn.value;
+            }
+
+            fpsIn.addEventListener("input", updateFPS);
+            
+            function updateRed() {
+                redOut.innerText = redIn.value;
+            }
+
+            redIn.addEventListener("input", updateRed);
+            // need only for animated image
+            function refreshCanvas(){
+                ctx.drawImage(img, 0, 0);
+            };
+
+            window.setInterval("refreshCanvas()", 50);
+
+            $(document).ready(function() {
+                function fetchDoubleValue() {
+                    $.ajax({
+                        url: '/mynumber',
+                        method: 'GET',
+                        success: function(data) {
+                            $('#double-value').text(data.value);
+                        },
+                        error: function(error) {
+                            console.error("Error fetching double value:", error);
+                        }
+                    });
+                }
+
+                // Fetch the double value every 2 seconds (2000 ms)
+                setInterval(fetchDoubleValue, 50);
+            });
+        </script>
 
     </body>
 </html>

@@ -17,7 +17,7 @@ window.setInterval("refreshCanvas()", 50);
 $(document).ready(function() {
     function fetchDoubleValue() {
         $.ajax({
-            url: '/get_double',
+            url: '/mynumber',
             method: 'GET',
             success: function(data) {
                 $('#double-value').text(data.value);
@@ -29,5 +29,5 @@ $(document).ready(function() {
     }
 
     // Fetch the double value every 2 seconds (2000 ms)
-    setInterval(fetchDoubleValue, 2000);
+    setInterval(fetchDoubleValue, 50);
 });

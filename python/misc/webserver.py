@@ -7,13 +7,24 @@ app = Flask(__name__)
 video_capture = cv2.VideoCapture(0)
 
 prevTime = 0
+framerate_cap = 20
+framerate = 0
 
 def gen():    
+    global prevTime
+    global framerate
+    global framerate_cap
+
     while True:
         ret, image = video_capture.read()
-        cv2.imwrite('t.jpg', image)
+        
+        _, buffer = cv2.imencode('.jpg', image)
+        frame = buffer.tobytes()
+        framerate = 1 / (time.time() - prevTime)
+        prevTime = time.time()
         yield (b'--frame\r\n'
-           b'Content-Type: image/jpeg\r\n\r\n' + open('t.jpg', 'rb').read() + b'\r\n')
+           b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+        
     video_capture.release()
 
 @app.route('/')
@@ -27,18 +38,21 @@ def video_feed():
     return Response(gen(),
                 mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/time')
-def time():
-    prevTime = time.time()
-    return jsonify(value=prevTime)
+@app.route('/mynumber', methods =["GET", "POST"])
+def mynumber():
+    return jsonify(value=framerate_cap)
 
+@app.route('/limitFPS', methods=['GET', 'POST'])
+def limitFPS():
+    global framerate_cap
 
-# end of video stream
+    if(request.method == 'POST'):
+        framerate_cap = request.form['fps']
+    
 
-# @app.route('/name', methods =["GET", "POST"])
-# def bob():
-#     return render_template('index.html', value=)
-
+@app.route('/name')
+def name():
+    return 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port="5801")
