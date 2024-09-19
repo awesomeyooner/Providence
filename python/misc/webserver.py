@@ -47,8 +47,9 @@ def limitFPS():
     global framerate_cap
 
     if(request.method == 'POST'):
-        framerate_cap = request.form['fps']
+        framerate_cap = request.get_json(force=True).get('fps')
     
+    return "success"
 
 @app.route('/name')
 def name():
