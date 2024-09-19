@@ -2,30 +2,22 @@ import cv2
 import os
 import time
 from flask import Flask, request, render_template, render_template_string, Response, jsonify
+from src.CameraManager import CameraManager
+from src.Constants import CameraConstants
 
 app = Flask(__name__)
-video_capture = cv2.VideoCapture(0)
-
-prevTime = 0
-framerate_cap = 20
-framerate = 0
+camera = CameraManager(0, 30)
 
 def gen():    
-    global prevTime
-    global framerate
-    global framerate_cap
 
     while True:
-        ret, image = video_capture.read()
-        
-        _, buffer = cv2.imencode('.jpg', image)
-        frame = buffer.tobytes()
-        framerate = 1 / (time.time() - prevTime)
-        prevTime = time.time()
+        ret, image = camera.getFrame()
+
+       
         yield (b'--frame\r\n'
-           b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-        
-    video_capture.release()
+            b'Content-Type: image/jpeg\r\n\r\n' + camera.compressFrame(image) + b'\r\n')
+    
+    camera.release()
 
 @app.route('/')
 def index():
@@ -38,18 +30,18 @@ def video_feed():
     return Response(gen(),
                 mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/mynumber', methods =["GET", "POST"])
-def mynumber():
-    return jsonify(value=framerate_cap)
+@app.route('/framerate', methods =["GET", "POST"])
+def framerate():
+    return jsonify(value=camera.getFPS())
 
-@app.route('/limitFPS', methods=['GET', 'POST'])
+@app.route('/framerate_limit', methods=['GET', 'POST'])
 def limitFPS():
-    global framerate_cap
-
     if(request.method == 'POST'):
-        framerate_cap = request.get_json(force=True).get('fps')
+        camera.setFramerateLimit(
+            request.get_json(force=True).get('fps')
+        )
     
-    return "success"
+    return jsonify(value=camera.getFramerateLimit())
 
 @app.route('/name')
 def name():

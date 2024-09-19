@@ -16,7 +16,6 @@ const fpsOut = document.getElementById('fps out');
 
 function updateFPS() {
     fpsOut.innerText = fpsIn.value;
-    send()
 }
 
 fpsIn.addEventListener("input", updateFPS);
@@ -34,12 +33,18 @@ function refreshCanvas(){
 window.setInterval("refreshCanvas()", 50);
 
 $(document).ready(function() {
-    function recieve() {
+    function update(){
+        recieveFramerate()
+        sendFramerateLimit()
+        recieveFramerateLimit()
+    }
+
+    function recieveFramerate() {
         $.ajax({
-            url: '/mynumber',
+            url: '/framerate',
             method: 'GET',
             success: function(data) {
-                $('#double-value').text(data.value);
+                $('#framerate').text(data.value);
             },
             error: function(error) {
                 console.error("Error fetching double value:", error);
@@ -47,9 +52,22 @@ $(document).ready(function() {
         });
     }
 
-    function send(){
+    function recieveFramerateLimit() {
         $.ajax({
-            url: '/limitFPS',
+            url: '/framerate_limit',
+            method: 'GET',
+            success: function(data) {
+                $('#framerate_limit').text(data.value);
+            },
+            error: function(error) {
+                console.error("Error fetching double value:", error);
+            }
+        });
+    }
+
+    function sendFramerateLimit(){
+        $.ajax({
+            url: '/framerate_limit',
             method: 'POST',
             data: JSON.stringify({
                 "fps": fpsIn.value
@@ -58,7 +76,7 @@ $(document).ready(function() {
             traditional: true,
 
             success: function(data) {
-                //$('#double-value').text(data.value);
+                $('#framerate_limit').text(data.fps);
             },
             error: function(error) {
                 console.error("Error fetching double value:", error);
@@ -67,6 +85,5 @@ $(document).ready(function() {
     }
 
     // Fetch the double value every 2 seconds (2000 ms)
-    setInterval(recieve, 50);
-    setInterval(send, 50);
+    setInterval(update, 50);
 });
