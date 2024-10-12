@@ -1,5 +1,5 @@
 from pupil_apriltags import Detector
-from util.Utility import Constants
+from .Utility import Constants
 
 
 class DetectionManager:

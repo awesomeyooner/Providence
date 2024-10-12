@@ -76,7 +76,11 @@
         "any": "cpp",
         "regex": "cpp",
         "ranges": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "coroutine": "cpp",
+        "source_location": "cpp",
+        "*.ipp": "cpp"
     },
-    "cmake.sourceDirectory": "/home/dev/Documents/GitHub/Providence/cpp"
+    "cmake.sourceDirectory": "/home/dev/Documents/GitHub/Providence/cpp",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++-11"
 }

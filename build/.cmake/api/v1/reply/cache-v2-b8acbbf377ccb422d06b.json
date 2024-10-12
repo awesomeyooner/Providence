@@ -1050,6 +1050,30 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "Crow::Crow_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Crow::Crow."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Crow::Crow_DIR-NOTFOUND"
+		},
+		{
+			"name" : "Crow_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Crow."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Crow_DIR-NOTFOUND"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenCV",
 			"properties" : 
 			[
