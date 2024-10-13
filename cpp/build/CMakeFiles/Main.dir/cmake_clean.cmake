@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Main.dir/src/Main.cpp.o"
   "CMakeFiles/Main.dir/src/Main.cpp.o.d"
-  "CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o"
-  "CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o.d"
+  "CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o"
+  "CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o.d"
+  "CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o"
+  "CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o.d"
   "Main"
   "Main.pdb"
 )

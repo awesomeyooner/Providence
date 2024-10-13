@@ -153,29 +153,53 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
-src/systemmanager/SystemManager.o: src/systemmanager/SystemManager.cpp.o
-.PHONY : src/systemmanager/SystemManager.o
+src/include/cameramanager/CameraManager.o: src/include/cameramanager/CameraManager.cpp.o
+.PHONY : src/include/cameramanager/CameraManager.o
 
 # target to build an object file
-src/systemmanager/SystemManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o
-.PHONY : src/systemmanager/SystemManager.cpp.o
+src/include/cameramanager/CameraManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o
+.PHONY : src/include/cameramanager/CameraManager.cpp.o
 
-src/systemmanager/SystemManager.i: src/systemmanager/SystemManager.cpp.i
-.PHONY : src/systemmanager/SystemManager.i
+src/include/cameramanager/CameraManager.i: src/include/cameramanager/CameraManager.cpp.i
+.PHONY : src/include/cameramanager/CameraManager.i
 
 # target to preprocess a source file
-src/systemmanager/SystemManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.i
-.PHONY : src/systemmanager/SystemManager.cpp.i
+src/include/cameramanager/CameraManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.i
+.PHONY : src/include/cameramanager/CameraManager.cpp.i
 
-src/systemmanager/SystemManager.s: src/systemmanager/SystemManager.cpp.s
-.PHONY : src/systemmanager/SystemManager.s
+src/include/cameramanager/CameraManager.s: src/include/cameramanager/CameraManager.cpp.s
+.PHONY : src/include/cameramanager/CameraManager.s
 
 # target to generate assembly for a file
-src/systemmanager/SystemManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.s
-.PHONY : src/systemmanager/SystemManager.cpp.s
+src/include/cameramanager/CameraManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.s
+.PHONY : src/include/cameramanager/CameraManager.cpp.s
+
+src/include/systemmanager/SystemManager.o: src/include/systemmanager/SystemManager.cpp.o
+.PHONY : src/include/systemmanager/SystemManager.o
+
+# target to build an object file
+src/include/systemmanager/SystemManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o
+.PHONY : src/include/systemmanager/SystemManager.cpp.o
+
+src/include/systemmanager/SystemManager.i: src/include/systemmanager/SystemManager.cpp.i
+.PHONY : src/include/systemmanager/SystemManager.i
+
+# target to preprocess a source file
+src/include/systemmanager/SystemManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.i
+.PHONY : src/include/systemmanager/SystemManager.cpp.i
+
+src/include/systemmanager/SystemManager.s: src/include/systemmanager/SystemManager.cpp.s
+.PHONY : src/include/systemmanager/SystemManager.s
+
+# target to generate assembly for a file
+src/include/systemmanager/SystemManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.s
+.PHONY : src/include/systemmanager/SystemManager.cpp.s
 
 # Help Target
 help:
@@ -189,9 +213,12 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
-	@echo "... src/systemmanager/SystemManager.o"
-	@echo "... src/systemmanager/SystemManager.i"
-	@echo "... src/systemmanager/SystemManager.s"
+	@echo "... src/include/cameramanager/CameraManager.o"
+	@echo "... src/include/cameramanager/CameraManager.i"
+	@echo "... src/include/cameramanager/CameraManager.s"
+	@echo "... src/include/systemmanager/SystemManager.o"
+	@echo "... src/include/systemmanager/SystemManager.i"
+	@echo "... src/include/systemmanager/SystemManager.s"
 .PHONY : help
 
 
