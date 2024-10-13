@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a library.
+APRILTAG_LIBRARIES:FILEPATH=/usr/local/lib/libapriltag.so
+
 //Value Computed by CMake
 AprilTag_Detector_BINARY_DIR:STATIC=/home/dev/Documents/GitHub/Providence/cpp/build
 

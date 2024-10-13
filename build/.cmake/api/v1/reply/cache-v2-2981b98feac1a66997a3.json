@@ -2,6 +2,30 @@
 	"entries" : 
 	[
 		{
+			"name" : "APRILTAG_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/lib/libapriltag.so"
+		},
+		{
+			"name" : "AprilTag_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for AprilTag."
+				}
+			],
+			"type" : "PATH",
+			"value" : "AprilTag_DIR-NOTFOUND"
+		},
+		{
 			"name" : "AprilTag_Detector_BINARY_DIR",
 			"properties" : 
 			[
@@ -36,6 +60,30 @@
 			],
 			"type" : "STATIC",
 			"value" : "/home/dev/Documents/GitHub/Providence/cpp"
+		},
+		{
+			"name" : "Apriltafsada_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Apriltafsada."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Apriltafsada_DIR-NOTFOUND"
+		},
+		{
+			"name" : "Apriltag3_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Apriltag3."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Apriltag3_DIR-NOTFOUND"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",

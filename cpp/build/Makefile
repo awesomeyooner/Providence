@@ -177,6 +177,30 @@ src/include/cameramanager/CameraManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.s
 .PHONY : src/include/cameramanager/CameraManager.cpp.s
 
+src/include/detectionmanager/DetectionManager.o: src/include/detectionmanager/DetectionManager.cpp.o
+.PHONY : src/include/detectionmanager/DetectionManager.o
+
+# target to build an object file
+src/include/detectionmanager/DetectionManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o
+.PHONY : src/include/detectionmanager/DetectionManager.cpp.o
+
+src/include/detectionmanager/DetectionManager.i: src/include/detectionmanager/DetectionManager.cpp.i
+.PHONY : src/include/detectionmanager/DetectionManager.i
+
+# target to preprocess a source file
+src/include/detectionmanager/DetectionManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.i
+.PHONY : src/include/detectionmanager/DetectionManager.cpp.i
+
+src/include/detectionmanager/DetectionManager.s: src/include/detectionmanager/DetectionManager.cpp.s
+.PHONY : src/include/detectionmanager/DetectionManager.s
+
+# target to generate assembly for a file
+src/include/detectionmanager/DetectionManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.s
+.PHONY : src/include/detectionmanager/DetectionManager.cpp.s
+
 src/include/systemmanager/SystemManager.o: src/include/systemmanager/SystemManager.cpp.o
 .PHONY : src/include/systemmanager/SystemManager.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/include/cameramanager/CameraManager.o"
 	@echo "... src/include/cameramanager/CameraManager.i"
 	@echo "... src/include/cameramanager/CameraManager.s"
+	@echo "... src/include/detectionmanager/DetectionManager.o"
+	@echo "... src/include/detectionmanager/DetectionManager.i"
+	@echo "... src/include/detectionmanager/DetectionManager.s"
 	@echo "... src/include/systemmanager/SystemManager.o"
 	@echo "... src/include/systemmanager/SystemManager.i"
 	@echo "... src/include/systemmanager/SystemManager.s"

@@ -2,6 +2,18 @@
 	"entries" : 
 	[
 		{
+			"name" : "APRILTAG_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/lib/libapriltag.so"
+		},
+		{
 			"name" : "AprilTag_Detector_BINARY_DIR",
 			"properties" : 
 			[

@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a library.
+APRILTAG_LIBRARIES:FILEPATH=/usr/local/lib/libapriltag.so
+
+//The directory containing a CMake configuration file for AprilTag.
+AprilTag_DIR:PATH=AprilTag_DIR-NOTFOUND
+
 //Value Computed by CMake
 AprilTag_Detector_BINARY_DIR:STATIC=/home/dev/Documents/GitHub/Providence/build
 
@@ -22,6 +28,12 @@ AprilTag_Detector_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 AprilTag_Detector_SOURCE_DIR:STATIC=/home/dev/Documents/GitHub/Providence/cpp
+
+//The directory containing a CMake configuration file for Apriltafsada.
+Apriltafsada_DIR:PATH=Apriltafsada_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Apriltag3.
+Apriltag3_DIR:PATH=Apriltag3_DIR-NOTFOUND
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line

@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Main-Debug-a52674ba736fe6cc1f8f.json",
+					"jsonFile" : "target-Main-Debug-d4ffcf3840b4a9c2f8fd.json",
 					"name" : "Main",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/dev/Documents/GitHub/Providence/cpp/build",
+		"build" : "/home/dev/Documents/GitHub/Providence/build",
 		"source" : "/home/dev/Documents/GitHub/Providence/cpp"
 	},
 	"version" : 

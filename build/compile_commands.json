@@ -1,17 +1,22 @@
 [
 {
   "directory": "/home/dev/Documents/GitHub/Providence/build",
-  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/Main.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp",
+  "command": "/usr/bin/g++  -I/usr/local/include/apriltag -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/Main.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp",
   "file": "/home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp"
 },
 {
   "directory": "/home/dev/Documents/GitHub/Providence/build",
-  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/cameramanager/CameraManager.cpp",
+  "command": "/usr/bin/g++  -I/usr/local/include/apriltag -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/cameramanager/CameraManager.cpp",
   "file": "/home/dev/Documents/GitHub/Providence/cpp/src/include/cameramanager/CameraManager.cpp"
 },
 {
   "directory": "/home/dev/Documents/GitHub/Providence/build",
-  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.cpp",
+  "command": "/usr/bin/g++  -I/usr/local/include/apriltag -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp",
+  "file": "/home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp"
+},
+{
+  "directory": "/home/dev/Documents/GitHub/Providence/build",
+  "command": "/usr/bin/g++  -I/usr/local/include/apriltag -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.cpp",
   "file": "/home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.cpp"
 }
 ]

@@ -1,6 +1,8 @@
-CMakeFiles/Main.dir/src/Main.cpp.o: \
- /home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp \
- /usr/include/stdc-predef.h /usr/include/opencv4/opencv2/opencv.hpp \
+CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o: \
+ /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp \
+ /usr/include/stdc-predef.h \
+ /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.hpp \
+ /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -346,14 +348,6 @@ CMakeFiles/Main.dir/src/Main.cpp.o: \
  /usr/include/opencv4/opencv2/video.hpp \
  /usr/include/opencv4/opencv2/video/tracking.hpp \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
- /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/fstream \
- /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc \
- /home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.hpp \
- /home/dev/Documents/GitHub/Providence/cpp/src/include/cameramanager/CameraManager.hpp \
- /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.hpp \
  /usr/local/include/apriltag/apriltag.h \
  /usr/local/include/apriltag/common/matd.h \
  /usr/local/include/apriltag/common/image_u8.h \

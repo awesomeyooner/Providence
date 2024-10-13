@@ -9,9 +9,11 @@
 #include <fstream>
 #include "include/systemmanager/SystemManager.hpp"
 #include "include/cameramanager/CameraManager.hpp"
+#include "include/detectionmanager/DetectionManager.hpp"
 
 int main(int argc, char** argv){
     CameraManager camera(2, cv::CAP_V4L2);
+    DetectionManager detect;
 
     if(!camera.isOpened())
         return -1;

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp" "CMakeFiles/Main.dir/src/Main.cpp.o" "gcc" "CMakeFiles/Main.dir/src/Main.cpp.o.d"
   "/home/dev/Documents/GitHub/Providence/cpp/src/include/cameramanager/CameraManager.cpp" "CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o" "gcc" "CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o.d"
+  "/home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp" "CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o" "gcc" "CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o.d"
   "/home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.cpp" "CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o" "gcc" "CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o.d"
   )
 

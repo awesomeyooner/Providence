@@ -97,10 +97,24 @@ CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/src/include/cameramanager/CameraManager.cpp -o CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.s
 
+CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp
+CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o -MF CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o.d -o CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp
+
+CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp > CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.i
+
+CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/src/include/detectionmanager/DetectionManager.cpp -o CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.s
+
 CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o: CMakeFiles/Main.dir/flags.make
 CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.cpp
 CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o -MF CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o.d -o CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/include/systemmanager/SystemManager.cpp
 
 CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.i: cmake_force
@@ -115,6 +129,7 @@ CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.s: cmake_force
 Main_OBJECTS = \
 "CMakeFiles/Main.dir/src/Main.cpp.o" \
 "CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o" \
+"CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o" \
 "CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o"
 
 # External object files for target Main
@@ -122,6 +137,7 @@ Main_EXTERNAL_OBJECTS =
 
 Main: CMakeFiles/Main.dir/src/Main.cpp.o
 Main: CMakeFiles/Main.dir/src/include/cameramanager/CameraManager.cpp.o
+Main: CMakeFiles/Main.dir/src/include/detectionmanager/DetectionManager.cpp.o
 Main: CMakeFiles/Main.dir/src/include/systemmanager/SystemManager.cpp.o
 Main: CMakeFiles/Main.dir/build.make
 Main: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
@@ -159,6 +175,7 @@ Main: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.5.4d
+Main: /usr/local/lib/libapriltag.so
 Main: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.5.4d
@@ -179,7 +196,7 @@ Main: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 Main: CMakeFiles/Main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
