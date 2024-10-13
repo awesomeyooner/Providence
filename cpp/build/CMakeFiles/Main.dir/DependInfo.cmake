@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp" "CMakeFiles/Main.dir/src/Main.cpp.o" "gcc" "CMakeFiles/Main.dir/src/Main.cpp.o.d"
+  "/home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp" "CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o" "gcc" "CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o.d"
   )
 
 # Targets to which this target links.

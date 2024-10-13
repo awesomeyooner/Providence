@@ -9,7 +9,9 @@ find_package( OpenCV REQUIRED )
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable( Main src/Main.cpp )
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+
+add_executable( Main src/Main.cpp ${SOURCES} )
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 

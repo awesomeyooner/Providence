@@ -83,14 +83,46 @@ CMakeFiles/Main.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/Main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp -o CMakeFiles/Main.dir/src/Main.cpp.s
 
+CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/src/cameramanager/CameraManager.cpp
+CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o -MF CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o.d -o CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/cameramanager/CameraManager.cpp
+
+CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/Documents/GitHub/Providence/cpp/src/cameramanager/CameraManager.cpp > CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.i
+
+CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/src/cameramanager/CameraManager.cpp -o CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.s
+
+CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp
+CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o -MF CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o.d -o CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp
+
+CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp > CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.i
+
+CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp -o CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.s
+
 # Object files for target Main
 Main_OBJECTS = \
-"CMakeFiles/Main.dir/src/Main.cpp.o"
+"CMakeFiles/Main.dir/src/Main.cpp.o" \
+"CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o" \
+"CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o"
 
 # External object files for target Main
 Main_EXTERNAL_OBJECTS =
 
 Main: CMakeFiles/Main.dir/src/Main.cpp.o
+Main: CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o
+Main: CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o
 Main: CMakeFiles/Main.dir/build.make
 Main: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d
@@ -147,7 +179,7 @@ Main: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 Main: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 Main: CMakeFiles/Main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/Documents/GitHub/Providence/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

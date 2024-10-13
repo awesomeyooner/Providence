@@ -153,6 +153,30 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/systemmanager/SystemManager.o: src/systemmanager/SystemManager.cpp.o
+.PHONY : src/systemmanager/SystemManager.o
+
+# target to build an object file
+src/systemmanager/SystemManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o
+.PHONY : src/systemmanager/SystemManager.cpp.o
+
+src/systemmanager/SystemManager.i: src/systemmanager/SystemManager.cpp.i
+.PHONY : src/systemmanager/SystemManager.i
+
+# target to preprocess a source file
+src/systemmanager/SystemManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.i
+.PHONY : src/systemmanager/SystemManager.cpp.i
+
+src/systemmanager/SystemManager.s: src/systemmanager/SystemManager.cpp.s
+.PHONY : src/systemmanager/SystemManager.s
+
+# target to generate assembly for a file
+src/systemmanager/SystemManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.s
+.PHONY : src/systemmanager/SystemManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/systemmanager/SystemManager.o"
+	@echo "... src/systemmanager/SystemManager.i"
+	@echo "... src/systemmanager/SystemManager.s"
 .PHONY : help
 
 

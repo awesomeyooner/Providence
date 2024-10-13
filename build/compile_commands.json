@@ -3,5 +3,15 @@
   "directory": "/home/dev/Documents/GitHub/Providence/build",
   "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/Main.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp",
   "file": "/home/dev/Documents/GitHub/Providence/cpp/src/Main.cpp"
+},
+{
+  "directory": "/home/dev/Documents/GitHub/Providence/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/cameramanager/CameraManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/cameramanager/CameraManager.cpp",
+  "file": "/home/dev/Documents/GitHub/Providence/cpp/src/cameramanager/CameraManager.cpp"
+},
+{
+  "directory": "/home/dev/Documents/GitHub/Providence/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -g -Wall -Wextra -o CMakeFiles/Main.dir/src/systemmanager/SystemManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp",
+  "file": "/home/dev/Documents/GitHub/Providence/cpp/src/systemmanager/SystemManager.cpp"
 }
 ]
