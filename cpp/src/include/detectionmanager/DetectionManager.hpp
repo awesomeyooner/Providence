@@ -39,6 +39,8 @@ class DetectionManager{
 
         zarray_t* getDetections(cv::Mat frame);
 
+        cv::Mat annotate(cv::Mat frame, zarray_t* detections);
+
         void clean();
 
 };

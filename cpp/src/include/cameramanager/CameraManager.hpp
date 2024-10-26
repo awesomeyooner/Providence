@@ -24,9 +24,12 @@ class CameraManager{
         bool isOpened();
 
         bool setProperty(cv::VideoCaptureProperties property, double value, bool print);
+        double getProperty(cv::VideoCaptureProperties property, bool print);
 
         cv::Mat getFrame();
+        cv::Mat getFrameGray();
         bool show();
+        bool show(cv::Mat frame);
 
         double getFramerate();
         void updateFramerate();

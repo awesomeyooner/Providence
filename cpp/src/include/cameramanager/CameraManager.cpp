@@ -21,11 +21,17 @@ void CameraManager::config(){
 
 bool CameraManager::setProperty(cv::VideoCaptureProperties property, double value, bool print){
     cap.set(property, value);
+
+    return getProperty(property, print) == value;
+}
+
+double CameraManager::getProperty(cv::VideoCaptureProperties property, bool print){
+    double value = cap.get(property);
     
     if(print)
-        std::cout << cap.get(property) << std::endl;
+        std::cout << value << std::endl;
 
-    return cap.get(property) == value;
+    return value;
 }
 
 bool CameraManager::isOpened(){
@@ -42,6 +48,14 @@ cv::Mat CameraManager::getFrame(){
     return frame;
 }
 
+cv::Mat CameraManager::getFrameGray(){
+    cv::Mat frame = getFrame();
+
+    cv::cvtColor(frame, frame, cv::COLOR_BGR2GRAY);
+
+    return frame;
+}
+
 double CameraManager::getFramerate(){
     return framerate;
 }
@@ -54,7 +68,10 @@ void CameraManager::updateFramerate(){
 }
 
 bool CameraManager::show(){
-    cv::Mat frame = getFrame();
+    return show(getFrame());
+}
+
+bool CameraManager::show(cv::Mat frame){
 
     if(frame.empty())
         return false;

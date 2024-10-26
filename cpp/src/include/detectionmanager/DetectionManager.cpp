@@ -46,24 +46,48 @@ void DetectionManager::process(zarray_t* detections){
 
         double error = estimate_tag_pose(&info, &pose);
 
-        std::cout << "spotted!" << std::endl;
+        std::cout << detection->id << std::endl;
     }
 }
 
 image_u8_t DetectionManager::matToImage(cv::Mat mat){
 
-    cv::Mat gray;
-    
-    cv::cvtColor(mat, gray, cv::COLOR_BGR2GRAY);
-
     image_u8_t image = {
-        .width = gray.cols,
-        .height = gray.rows,
-        .stride = gray.cols,
-        .buf = gray.data
+        .width = mat.cols,
+        .height = mat.rows,
+        .stride = mat.cols,
+        .buf = mat.data
     };
 
     return image;
+}
+
+cv::Mat DetectionManager::annotate(cv::Mat frame, zarray_t* detections){
+
+    for(int i = 0; i < zarray_size(detections); i++){
+        apriltag_detection_t* detection;
+
+        zarray_get(detections, i, &detection);
+
+        auto corners = detection->p;
+
+        cv::Point center(detection->c[0], detection->c[1]);
+
+        cv::Point one(corners[0][0], corners[0][1]);
+        cv::Point two(corners[1][0], corners[1][1]);
+        cv::Point three(corners[2][0], corners[2][1]);
+        cv::Point four(corners[3][0], corners[3][1]);
+
+        cv::line(frame, one, two, cv::Scalar(255, 0, 0), 2, cv::LINE_8);
+        cv::line(frame, two, three, cv::Scalar(0, 255, 0), 2, cv::LINE_8);
+        cv::line(frame, three, four, cv::Scalar(0, 0, 255), 2, cv::LINE_8);
+        cv::line(frame, four, one, cv::Scalar(0, 255, 255), 2, cv::LINE_8);
+
+        cv::putText(frame, std::to_string(detection->id), center, cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(255), 4, cv::LINE_AA);
+        
+    }
+
+    return frame;
 }
 
 void DetectionManager::clean(){

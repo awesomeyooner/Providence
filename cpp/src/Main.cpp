@@ -36,12 +36,16 @@ int main(int argc, char** argv){
         if(camera.getFramerate() > 30)
             continue;
 
-        //code goes here
-        zarray_t* detections = detector.getDetections(camera.getFrame());
-        //detector.process(detections);
-        std::cout << zarray_size(detections) << std::endl;
+        cv::Mat original = camera.getFrame();
+        cv::Mat frame;
 
-        if(!camera.show())
+        cv::cvtColor(original, frame, cv::COLOR_BGR2GRAY);
+
+        //code goes here
+        zarray_t* detections = detector.getDetections(frame);
+        detector.process(detections);
+
+        if(!camera.show(detector.annotate(original, detections)))
             break;
 
         //std::cout << camera.getFramerate() << std::endl;
