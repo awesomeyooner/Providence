@@ -1,8 +1,7 @@
 #include "DetectionManager.hpp"
 
-DetectionManager::DetectionManager() : detector(apriltag_detector_create()), family(tag36h11_create()){
+DetectionManager::DetectionManager() : DetectionManager::DetectionManager(apriltag_detector_create(), tag36h11_create()){
     //use detector. to see everything
-    apriltag_detector_add_family(detector, family);
 }
 
 DetectionManager::DetectionManager(apriltag_detector_t* det, apriltag_family_t* fam) : detector(det), family(fam){

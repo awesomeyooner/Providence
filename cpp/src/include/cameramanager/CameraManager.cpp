@@ -1,17 +1,22 @@
 #include "CameraManager.hpp"
 
 CameraManager::CameraManager(int index) : cap(index) {
+    this->index = index;
     config();
 }
 CameraManager::CameraManager(int index, cv::VideoCaptureAPIs type) : cap(index, type) {
+    this->index = index;
     config();
 }
 
-void CameraManager::config(){
+void CameraManager::config(){   
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
     setProperty(cv::CAP_PROP_FRAME_WIDTH, 1280, true);
     setProperty(cv::CAP_PROP_FRAME_HEIGHT, 960, true);
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
     setProperty(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M','J','P','G'), true);
-    setProperty(cv::CAP_PROP_FPS, 30, true);
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    setProperty(cv::CAP_PROP_FPS, 50, true);
 }
 
 bool CameraManager::setProperty(cv::VideoCaptureProperties property, double value, bool print){
@@ -61,4 +66,8 @@ bool CameraManager::show(){
 
 void CameraManager::release(){
     cap.release();
+}
+
+void CameraManager::reopen(){
+    cap.open(index);
 }

@@ -38,12 +38,13 @@ int main(int argc, char** argv){
 
         //code goes here
         zarray_t* detections = detector.getDetections(camera.getFrame());
-        detector.process(detections);
+        //detector.process(detections);
+        std::cout << zarray_size(detections) << std::endl;
 
         if(!camera.show())
             break;
 
-        std::cout << camera.getFramerate() << std::endl;
+        //std::cout << camera.getFramerate() << std::endl;
 
         if(cv::waitKey(10) == 27)
             break;

@@ -32,8 +32,11 @@ class CameraManager{
         void updateFramerate();
 
         void release();
+        void reopen();
 
     private:
+        int index;
+
         double framerate = 0;
         std::chrono::_V2::system_clock::time_point previousTimestamp = std::chrono::high_resolution_clock::now();
 };
