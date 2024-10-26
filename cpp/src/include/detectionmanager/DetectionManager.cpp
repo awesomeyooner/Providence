@@ -10,6 +10,14 @@ DetectionManager::DetectionManager(apriltag_detector_t* det, apriltag_family_t* 
     apriltag_detector_add_family(detector, family);
 }
 
+apriltag_detector_t* DetectionManager::getDetector(){
+    return detector;
+}
+
+apriltag_family_t* DetectionManager::getFamily(){
+    return family;
+}
+
 void DetectionManager::setIntrinsics(double fx, double fy, double cx, double cy){
     info.fx = fx;
     info.fy = fy;
@@ -18,7 +26,9 @@ void DetectionManager::setIntrinsics(double fx, double fy, double cx, double cy)
 }
 
 zarray_t* DetectionManager::getDetections(cv::Mat mat){
-    return apriltag_detector_detect(detector, matToImage(mat));
+    image_u8_t image = matToImage(mat);
+
+    return apriltag_detector_detect(detector, &image);
 }
 
 void DetectionManager::process(zarray_t* detections){
@@ -32,11 +42,12 @@ void DetectionManager::process(zarray_t* detections){
         apriltag_pose_t pose;
 
         double error = estimate_tag_pose(&info, &pose);
+
+        std::cout << detection->id << std::endl;
     }
 }
 
-image_u8_t* DetectionManager::matToImage(cv::Mat mat){
-    
+image_u8_t DetectionManager::matToImage(cv::Mat mat){
 
     image_u8_t image = {
         .width = mat.cols,
@@ -45,7 +56,7 @@ image_u8_t* DetectionManager::matToImage(cv::Mat mat){
         .buf = mat.data
     };
 
-    return &image;
+    return image;
 }
 
 void DetectionManager::clean(){

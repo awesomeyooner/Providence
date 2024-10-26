@@ -9,7 +9,7 @@ CameraManager::CameraManager(int index, cv::VideoCaptureAPIs type) : cap(index, 
 
 void CameraManager::config(){
     setProperty(cv::CAP_PROP_FRAME_WIDTH, 1280, true);
-    setProperty(cv::CAP_PROP_FRAME_HEIGHT, 720, true);
+    setProperty(cv::CAP_PROP_FRAME_HEIGHT, 960, true);
     setProperty(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M','J','P','G'), true);
     setProperty(cv::CAP_PROP_FPS, 30, true);
 }
