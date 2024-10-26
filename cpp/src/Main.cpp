@@ -19,12 +19,12 @@ int main(int argc, char** argv){
     CameraManager camera(4, cv::CAP_V4L2);
     DetectionManager detector;
 
-    // detector.setIntrinsics(
-    //     730.0688629, 
-    //     730.2649748, 
-    //     674.9147146, 
-    //     545.0855588
-    // );
+    detector.setIntrinsics(
+        730.0688629, 
+        730.2649748, 
+        674.9147146, 
+        545.0855588
+    );
 
     if(!camera.isOpened())
         return -1;
@@ -36,24 +36,10 @@ int main(int argc, char** argv){
         if(camera.getFramerate() > 30)
             continue;
 
-        cv::Mat mat = camera.getFrame();
-
-        image_u8_t image = detector.matToImage(mat);
-
-        // image_u8_t image = {
-        //         .width = mat.cols,
-        //         .height = mat.rows,
-        //         .stride = mat.cols,
-        //         .buf = mat.data
-        //     };
         //code goes here
-        // zarray_t* detections = apriltag_detector_detect(detector.getDetector(), &image);
-        zarray_t* detections = apriltag_detector_detect(detector.getDetector(), &image);
-        //detector.matToImage(camera.getFrame());
-        //detector.getDetections(camera.getFrame());
-        //apriltag_detections_destroy(detections);
-        //detector.process(detections);
-    
+        zarray_t* detections = detector.getDetections(camera.getFrame());
+        detector.process(detections);
+
         if(!camera.show())
             break;
 
