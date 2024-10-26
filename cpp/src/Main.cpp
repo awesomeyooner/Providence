@@ -26,6 +26,12 @@ int main(int argc, char** argv){
         545.0855588
     );
 
+    double coeffs[8] = {0.03080258043, -0.06523055331, 0.0003025805212, -4.177400726e-05, 0.06055868742, -0.01789081457, 0.01539022107, 0.03832702575};
+
+    detector.setDistortionCoefficients(
+        coeffs
+    );
+
     if(!camera.isOpened())
         return -1;
 
@@ -36,16 +42,14 @@ int main(int argc, char** argv){
         if(camera.getFramerate() > 30)
             continue;
 
-        cv::Mat original = camera.getFrame();
-        cv::Mat frame;
+        cv::Mat frame = camera.getFrame();
 
-        cv::cvtColor(original, frame, cv::COLOR_BGR2GRAY);
+        cv::putText(frame, std::to_string(camera.getFramerate()), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
 
         //code goes here
-        zarray_t* detections = detector.getDetections(frame);
-        detector.process(detections);
+        detector.process(&frame);
 
-        if(!camera.show(detector.annotate(original, detections)))
+        if(!camera.show(frame))
             break;
 
         //std::cout << camera.getFramerate() << std::endl;

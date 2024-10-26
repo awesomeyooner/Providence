@@ -16,6 +16,8 @@ class DetectionManager{
         
     public:
 
+        double distCoeffs[8];
+
         apriltag_detection_info_t info = {
             .det = nullptr,
             .tagsize = 0.13, //meters, 6.5 inches total outside 8 squares. 4.875 inches
@@ -32,14 +34,21 @@ class DetectionManager{
         apriltag_family_t* getFamily();
 
         void setIntrinsics(double fx, double fy, double cx, double cy);
+        void setDistortionCoefficients(double coeffs[8]);
 
         image_u8_t matToImage(cv::Mat mat);
 
         void process(zarray_t* detections);
+        void process(cv::Mat* frame);
+
+        void poseToMat(apriltag_pose_t pose, cv::Mat* rvec, cv::Mat* tvec);
 
         zarray_t* getDetections(cv::Mat frame);
 
-        cv::Mat annotate(cv::Mat frame, zarray_t* detections);
+        void annotate(cv::Mat* frame, apriltag_detection_t* detection);
+        void putID(cv::Mat* frame, apriltag_detection_t* detection);
+        void drawCorners(cv::Mat* frame, apriltag_detection_t* detection);
+        void drawBox(cv::Mat* frame, apriltag_pose_t pose);
 
         void clean();
 
