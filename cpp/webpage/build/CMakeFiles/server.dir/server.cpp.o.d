@@ -880,4 +880,5 @@ CMakeFiles/server.dir/server.cpp.o: \
  /usr/include/zlib.h /usr/include/zconf.h \
  /usr/include/crow/http_connection.h /usr/include/crow/http_server.h \
  /usr/include/crow/version.h /usr/include/crow/app.h \
- /usr/include/c++/11/thread /usr/include/c++/11/bits/this_thread_sleep.h
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/this_thread_sleep.h \
+ /usr/include/crow/middlewares/cors.h

@@ -1078,8 +1078,11 @@ CMakeFiles/server.dir/server.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/we
   /usr/include/crow/version.h \
   /usr/include/crow/app.h \
   /usr/include/c++/11/thread \
-  /usr/include/c++/11/bits/this_thread_sleep.h
+  /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/include/crow/middlewares/cors.h
 
+
+/usr/include/crow/middlewares/cors.h:
 
 /usr/include/c++/11/bits/this_thread_sleep.h:
 
