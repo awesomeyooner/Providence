@@ -153,6 +153,102 @@ server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.s
 .PHONY : server.cpp.s
 
+src/Main.o: src/Main.cpp.o
+.PHONY : src/Main.o
+
+# target to build an object file
+src/Main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Main.cpp.o
+.PHONY : src/Main.cpp.o
+
+src/Main.i: src/Main.cpp.i
+.PHONY : src/Main.i
+
+# target to preprocess a source file
+src/Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Main.cpp.i
+.PHONY : src/Main.cpp.i
+
+src/Main.s: src/Main.cpp.s
+.PHONY : src/Main.s
+
+# target to generate assembly for a file
+src/Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Main.cpp.s
+.PHONY : src/Main.cpp.s
+
+src/include/cameramanager/CameraManager.o: src/include/cameramanager/CameraManager.cpp.o
+.PHONY : src/include/cameramanager/CameraManager.o
+
+# target to build an object file
+src/include/cameramanager/CameraManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o
+.PHONY : src/include/cameramanager/CameraManager.cpp.o
+
+src/include/cameramanager/CameraManager.i: src/include/cameramanager/CameraManager.cpp.i
+.PHONY : src/include/cameramanager/CameraManager.i
+
+# target to preprocess a source file
+src/include/cameramanager/CameraManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.i
+.PHONY : src/include/cameramanager/CameraManager.cpp.i
+
+src/include/cameramanager/CameraManager.s: src/include/cameramanager/CameraManager.cpp.s
+.PHONY : src/include/cameramanager/CameraManager.s
+
+# target to generate assembly for a file
+src/include/cameramanager/CameraManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.s
+.PHONY : src/include/cameramanager/CameraManager.cpp.s
+
+src/include/detectionmanager/DetectionManager.o: src/include/detectionmanager/DetectionManager.cpp.o
+.PHONY : src/include/detectionmanager/DetectionManager.o
+
+# target to build an object file
+src/include/detectionmanager/DetectionManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o
+.PHONY : src/include/detectionmanager/DetectionManager.cpp.o
+
+src/include/detectionmanager/DetectionManager.i: src/include/detectionmanager/DetectionManager.cpp.i
+.PHONY : src/include/detectionmanager/DetectionManager.i
+
+# target to preprocess a source file
+src/include/detectionmanager/DetectionManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.i
+.PHONY : src/include/detectionmanager/DetectionManager.cpp.i
+
+src/include/detectionmanager/DetectionManager.s: src/include/detectionmanager/DetectionManager.cpp.s
+.PHONY : src/include/detectionmanager/DetectionManager.s
+
+# target to generate assembly for a file
+src/include/detectionmanager/DetectionManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.s
+.PHONY : src/include/detectionmanager/DetectionManager.cpp.s
+
+src/include/systemmanager/SystemManager.o: src/include/systemmanager/SystemManager.cpp.o
+.PHONY : src/include/systemmanager/SystemManager.o
+
+# target to build an object file
+src/include/systemmanager/SystemManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o
+.PHONY : src/include/systemmanager/SystemManager.cpp.o
+
+src/include/systemmanager/SystemManager.i: src/include/systemmanager/SystemManager.cpp.i
+.PHONY : src/include/systemmanager/SystemManager.i
+
+# target to preprocess a source file
+src/include/systemmanager/SystemManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.i
+.PHONY : src/include/systemmanager/SystemManager.cpp.i
+
+src/include/systemmanager/SystemManager.s: src/include/systemmanager/SystemManager.cpp.s
+.PHONY : src/include/systemmanager/SystemManager.s
+
+# target to generate assembly for a file
+src/include/systemmanager/SystemManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.s
+.PHONY : src/include/systemmanager/SystemManager.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +261,18 @@ help:
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"
+	@echo "... src/Main.o"
+	@echo "... src/Main.i"
+	@echo "... src/Main.s"
+	@echo "... src/include/cameramanager/CameraManager.o"
+	@echo "... src/include/cameramanager/CameraManager.i"
+	@echo "... src/include/cameramanager/CameraManager.s"
+	@echo "... src/include/detectionmanager/DetectionManager.o"
+	@echo "... src/include/detectionmanager/DetectionManager.i"
+	@echo "... src/include/detectionmanager/DetectionManager.s"
+	@echo "... src/include/systemmanager/SystemManager.o"
+	@echo "... src/include/systemmanager/SystemManager.i"
+	@echo "... src/include/systemmanager/SystemManager.s"
 .PHONY : help
 
 

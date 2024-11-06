@@ -6,7 +6,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
 endif()
 
 find_package( OpenCV REQUIRED )
-find_package(Crow)
+find_package( Crow )
 
 include_directories(/usr/local/include/apriltag)
 
@@ -14,7 +14,7 @@ find_library(APRILTAG_LIBRARIES NAMES apriltag PATHS /usr/local/lib)
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-file(GLOB_RECURSE SOURCES "server.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable( server server.cpp ${SOURCES} )
 

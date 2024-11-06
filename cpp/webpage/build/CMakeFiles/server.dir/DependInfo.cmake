@@ -9,6 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dev/Documents/GitHub/Providence/cpp/webpage/server.cpp" "CMakeFiles/server.dir/server.cpp.o" "gcc" "CMakeFiles/server.dir/server.cpp.o.d"
+  "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/Main.cpp" "CMakeFiles/server.dir/src/Main.cpp.o" "gcc" "CMakeFiles/server.dir/src/Main.cpp.o.d"
+  "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.cpp" "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o.d"
+  "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.cpp" "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o.d"
+  "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.cpp" "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o.d"
   )
 
 # Targets to which this target links.

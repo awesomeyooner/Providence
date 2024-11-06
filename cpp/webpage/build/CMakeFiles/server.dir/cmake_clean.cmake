@@ -1,6 +1,14 @@
 file(REMOVE_RECURSE
   "CMakeFiles/server.dir/server.cpp.o"
   "CMakeFiles/server.dir/server.cpp.o.d"
+  "CMakeFiles/server.dir/src/Main.cpp.o"
+  "CMakeFiles/server.dir/src/Main.cpp.o.d"
+  "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o"
+  "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o.d"
+  "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o"
+  "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o.d"
+  "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o"
+  "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o.d"
   "server"
   "server.pdb"
 )
