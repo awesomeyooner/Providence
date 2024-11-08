@@ -35,14 +35,25 @@ scene.add(cube);
 // const point = new THREE.Points(pointGeometry, pointMaterial);
 // scene.add(point)
 
-var x, y, z = 0;
+var tx, ty, tz = 0;
+var rx, ry, rz = 0;
 
 function animate() {
     requestAnimationFrame(animate);
 
-    cube.position.x = x;
-    cube.position.y = y;
-    cube.position.z = z;
+    var mag = Math.sqrt(
+        (tx * tx) + 
+        (ty * ty) + 
+        (tz * tz)
+    );
+
+    cube.position.x = tx;
+    cube.position.y = ty;
+    cube.position.z = tz;
+
+    cube.rotation.x = rx;
+    cube.rotation.y = ry;
+    cube.rotation.z = rz;
 
     //cube.rotation.y += 0.01;
 
@@ -75,9 +86,13 @@ function updatePose(){
         .then(response => response.json())  // Parse the JSON response
         .then(data => {
             // Access elements of the JSON object
-            x = data.translation.x;
-            y = data.translation.y;
-            z = data.translation.z;
+            tx = data.translation.x;
+            ty = data.translation.y;
+            tz = data.translation.z;
+
+            rx = data.rotation.x;
+            ry = data.rotation.y;
+            rz = data.rotation.z;
         })
         .catch(error => console.error('Error fetching JSON:', error));  // Error handling
 }

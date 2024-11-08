@@ -78,7 +78,7 @@ void DetectionManager::process(cv::Mat* frame){
     }
 }
 
-void DetectionManager::process(cv::Mat* frame, double* x, double* y, double* z){
+void DetectionManager::process(cv::Mat* frame, double* tx, double* ty, double* tz, double* rx, double* ry, double* rz){
     cv::Mat gray;
 
     cv::cvtColor(*frame, gray, cv::COLOR_BGR2GRAY);
@@ -96,10 +96,14 @@ void DetectionManager::process(cv::Mat* frame, double* x, double* y, double* z){
 
         double error = estimate_tag_pose(&info, &pose);
 
-        *x = pose.t->data[0];
-        *y = pose.t->data[1];
-        *z = pose.t->data[2];
-        
+        *tx = pose.t->data[0];
+        *ty = pose.t->data[1];
+        *tz = pose.t->data[2];
+
+        *rx = atan2(pose.R->data[7], pose.R->data[8]);  // Roll
+        *ry = atan2(-pose.R->data[6] , sqrt((pose.R->data[7] * pose.R->data[7]) + (pose.R->data[8] * pose.R->data[8])));                  // Pitch
+        *rz = atan2(pose.R->data[3], pose.R->data[0]);   // Yaw
+
         drawBox(frame, pose);
         putID(frame, detection);
     }

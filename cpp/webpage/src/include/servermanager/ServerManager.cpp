@@ -40,7 +40,10 @@ void ServerManager::loop(){
         cv::putText(frame, std::to_string(camera.getFramerate()), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
 
         //code goes here
-        detector.process(&frame, &tx, &ty, &tz);
+        matd_t t;
+        matd_t R;
+
+        detector.process(&frame, &tx, &ty, &tz, &rx, &ry, &rz);
 
         std::lock_guard<std::mutex> lock(frameMutex);
         *sharedFrame = frame.clone();
@@ -72,12 +75,10 @@ void ServerManager::initialize(){
     app.route_dynamic("/pose")([](){
         crow::json::wvalue data;
         
-        crow::json::wvalue translation;
             data["translation"]["x"] = tx;
             data["translation"]["y"] = ty;
-            data["translation"]["z"] = tz; 
+            data["translation"]["z"] = tz;
 
-        crow::json::wvalue rotation;
             data["rotation"]["x"] = rx;
             data["rotation"]["y"] = ry;
             data["rotation"]["z"] = rz;
