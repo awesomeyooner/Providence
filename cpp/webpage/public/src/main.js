@@ -75,9 +75,9 @@ function updatePose(){
         .then(response => response.json())  // Parse the JSON response
         .then(data => {
             // Access elements of the JSON object
-            x = data.x;
-            y = data.y;
-            z = data.z;
+            x = data.translation.x;
+            y = data.translation.y;
+            z = data.translation.z;
         })
         .catch(error => console.error('Error fetching JSON:', error));  // Error handling
 }
@@ -90,4 +90,4 @@ function update(){
 
 
 
-setInterval(update, 20); // Update every second
+setInterval(update, 100); // Update every second
