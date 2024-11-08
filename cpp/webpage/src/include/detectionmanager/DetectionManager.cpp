@@ -96,13 +96,35 @@ void DetectionManager::process(cv::Mat* frame, double* tx, double* ty, double* t
 
         double error = estimate_tag_pose(&info, &pose);
 
-        *tx = pose.t->data[0];
-        *ty = pose.t->data[1];
-        *tz = pose.t->data[2];
+        cv::Mat R = (cv::Mat_<double>(3, 3) << 
+            pose.R->data[0], pose.R->data[1], pose.R->data[2],
+            pose.R->data[3], pose.R->data[4], pose.R->data[5],
+            pose.R->data[6], pose.R->data[7], pose.R->data[8]
+        );
 
-        *rx = atan2(pose.R->data[7], pose.R->data[8]);  // Roll
-        *ry = atan2(-pose.R->data[6] , sqrt((pose.R->data[7] * pose.R->data[7]) + (pose.R->data[8] * pose.R->data[8])));                  // Pitch
-        *rz = atan2(pose.R->data[3], pose.R->data[0]);   // Yaw
+        cv::Mat t = (cv::Mat_<double>(3, 1) << 
+            pose.t->data[0], pose.t->data[1], pose.t->data[2]
+        );
+
+        R = R.t();
+
+        cv::Mat cameraToTag = -R * t;
+
+        *tx = cameraToTag.at<double>(0, 0);
+        *ty = cameraToTag.at<double>(0, 1);
+        *tz = cameraToTag.at<double>(0, 2);
+
+        *rx = atan2(R.at<double>(2, 1), R.at<double>(2, 2));  // Roll
+        *ry = atan2(-R.at<double>(2, 0) , sqrt((R.at<double>(2, 1) * R.at<double>(2, 1)) + (R.at<double>(2, 2) * R.at<double>(2, 2))));                  // Pitch
+        *rz = atan2(R.at<double>(1, 0), R.at<double>(0, 0));   // Yaw
+
+        // *tx = pose.t->data[0];
+        // *ty = pose.t->data[1];
+        // *tz = pose.t->data[2];
+
+        // *rx = atan2(pose.R->data[7], pose.R->data[8]);  // Roll
+        // *ry = atan2(-pose.R->data[6] , sqrt((pose.R->data[7] * pose.R->data[7]) + (pose.R->data[8] * pose.R->data[8])));                  // Pitch
+        // *rz = atan2(pose.R->data[3], pose.R->data[0]);   // Yaw
 
         drawBox(frame, pose);
         putID(frame, detection);
