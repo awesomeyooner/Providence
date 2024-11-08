@@ -9,13 +9,19 @@
 #include <string>
 #include <iostream>
 #include "../util/Utility.hpp"
+#include "../superstructure/SuperStructure.hpp"
 
 class ServerManager{
 
     public:
-        ServerManager();
+
+        SuperStructure *superstructure;
+
+        ServerManager(SuperStructure *superstructure);
 
         void initialize();
+
+        void loop();
 
     private:
 

@@ -1015,4 +1015,8 @@ CMakeFiles/server.dir/server.cpp.o: \
  /usr/include/crow/version.h /usr/include/crow/app.h \
  /usr/include/crow/middlewares/cors.h \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../util/Utility.hpp \
- /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.hpp
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/SuperStructure.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../cameramanager/CameraManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../detectionmanager/DetectionManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.hpp

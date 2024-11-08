@@ -2,8 +2,18 @@
 
 using namespace Utility;
 
+ServerManager::ServerManager(SuperStructure *instance) : superstructure(instance){
+
+}
+
+void ServerManager::loop(){
+    
+}
+
 void ServerManager::initialize(){
     crow::SimpleApp app;
+
+    cv::Mat *frame = &superstructure->latestFrame;
     // Route to serve the main HTML file
     // CROW_ROUTE(app, "/")([](const crow::request&, crow::response& response) {
     //     response.set_static_file_info_unsafe("../public/index.html");
@@ -48,6 +58,19 @@ void ServerManager::initialize(){
             response.write("404: File not found");
         }
         response.end();
+    });
+
+    CROW_ROUTE(app, "/video")([](){
+        crow::response response;
+
+        response.code = 200;
+        response.set_header("Content-Type", "multipart/x-mixed-replace; boundary=frame");
+
+        while(true){
+            std::vector<uchar> buffer;
+
+            cv::imencode(".jpg", &frame)
+        }
     });
 
     // Route to serve other static files (JS, CSS, etc.)

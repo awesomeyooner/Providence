@@ -83,24 +83,10 @@ CMakeFiles/server.dir/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/server.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/webpage/server.cpp -o CMakeFiles/server.dir/server.cpp.s
 
-CMakeFiles/server.dir/src/Main.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/Main.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/Main.cpp
-CMakeFiles/server.dir/src/Main.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/Main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/Main.cpp.o -MF CMakeFiles/server.dir/src/Main.cpp.o.d -o CMakeFiles/server.dir/src/Main.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/webpage/src/Main.cpp
-
-CMakeFiles/server.dir/src/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/Documents/GitHub/Providence/cpp/webpage/src/Main.cpp > CMakeFiles/server.dir/src/Main.cpp.i
-
-CMakeFiles/server.dir/src/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/webpage/src/Main.cpp -o CMakeFiles/server.dir/src/Main.cpp.s
-
 CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.cpp
 CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o -MF CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o.d -o CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.cpp
 
 CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.s: cmake_force
 CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.cpp
 CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o -MF CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o.d -o CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.cpp
 
 CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.i: cmake_force
@@ -125,10 +111,38 @@ CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.cpp -o CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.s
 
+CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/ServerManager.cpp
+CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o -MF CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o.d -o CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/ServerManager.cpp
+
+CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/ServerManager.cpp > CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.i
+
+CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/ServerManager.cpp -o CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.s
+
+CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.cpp
+CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o -MF CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o.d -o CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.cpp
+
+CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.cpp > CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.i
+
+CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.cpp -o CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.s
+
 CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.cpp
 CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o -MF CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o.d -o CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o -c /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.cpp
 
 CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.i: cmake_force
@@ -142,18 +156,20 @@ CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.s: cmake_force
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/server.cpp.o" \
-"CMakeFiles/server.dir/src/Main.cpp.o" \
 "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o" \
 "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o" \
+"CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o" \
+"CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o" \
 "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
 server: CMakeFiles/server.dir/server.cpp.o
-server: CMakeFiles/server.dir/src/Main.cpp.o
 server: CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o
 server: CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o
+server: CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o
+server: CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o
 server: CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o
 server: CMakeFiles/server.dir/build.make
 server: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
@@ -215,7 +231,7 @@ server: /usr/lib/x86_64-linux-gnu/libz.so
 server: /usr/lib/x86_64-linux-gnu/libssl.so
 server: /usr/lib/x86_64-linux-gnu/libcrypto.so
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/Documents/GitHub/Providence/cpp/webpage/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

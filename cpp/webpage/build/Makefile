@@ -153,30 +153,6 @@ server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.s
 .PHONY : server.cpp.s
 
-src/Main.o: src/Main.cpp.o
-.PHONY : src/Main.o
-
-# target to build an object file
-src/Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Main.cpp.o
-.PHONY : src/Main.cpp.o
-
-src/Main.i: src/Main.cpp.i
-.PHONY : src/Main.i
-
-# target to preprocess a source file
-src/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Main.cpp.i
-.PHONY : src/Main.cpp.i
-
-src/Main.s: src/Main.cpp.s
-.PHONY : src/Main.s
-
-# target to generate assembly for a file
-src/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Main.cpp.s
-.PHONY : src/Main.cpp.s
-
 src/include/cameramanager/CameraManager.o: src/include/cameramanager/CameraManager.cpp.o
 .PHONY : src/include/cameramanager/CameraManager.o
 
@@ -225,6 +201,54 @@ src/include/detectionmanager/DetectionManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.s
 .PHONY : src/include/detectionmanager/DetectionManager.cpp.s
 
+src/include/servermanager/ServerManager.o: src/include/servermanager/ServerManager.cpp.o
+.PHONY : src/include/servermanager/ServerManager.o
+
+# target to build an object file
+src/include/servermanager/ServerManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o
+.PHONY : src/include/servermanager/ServerManager.cpp.o
+
+src/include/servermanager/ServerManager.i: src/include/servermanager/ServerManager.cpp.i
+.PHONY : src/include/servermanager/ServerManager.i
+
+# target to preprocess a source file
+src/include/servermanager/ServerManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.i
+.PHONY : src/include/servermanager/ServerManager.cpp.i
+
+src/include/servermanager/ServerManager.s: src/include/servermanager/ServerManager.cpp.s
+.PHONY : src/include/servermanager/ServerManager.s
+
+# target to generate assembly for a file
+src/include/servermanager/ServerManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.s
+.PHONY : src/include/servermanager/ServerManager.cpp.s
+
+src/include/superstructure/SuperStructure.o: src/include/superstructure/SuperStructure.cpp.o
+.PHONY : src/include/superstructure/SuperStructure.o
+
+# target to build an object file
+src/include/superstructure/SuperStructure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o
+.PHONY : src/include/superstructure/SuperStructure.cpp.o
+
+src/include/superstructure/SuperStructure.i: src/include/superstructure/SuperStructure.cpp.i
+.PHONY : src/include/superstructure/SuperStructure.i
+
+# target to preprocess a source file
+src/include/superstructure/SuperStructure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.i
+.PHONY : src/include/superstructure/SuperStructure.cpp.i
+
+src/include/superstructure/SuperStructure.s: src/include/superstructure/SuperStructure.cpp.s
+.PHONY : src/include/superstructure/SuperStructure.s
+
+# target to generate assembly for a file
+src/include/superstructure/SuperStructure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.s
+.PHONY : src/include/superstructure/SuperStructure.cpp.s
+
 src/include/systemmanager/SystemManager.o: src/include/systemmanager/SystemManager.cpp.o
 .PHONY : src/include/systemmanager/SystemManager.o
 
@@ -261,15 +285,18 @@ help:
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"
-	@echo "... src/Main.o"
-	@echo "... src/Main.i"
-	@echo "... src/Main.s"
 	@echo "... src/include/cameramanager/CameraManager.o"
 	@echo "... src/include/cameramanager/CameraManager.i"
 	@echo "... src/include/cameramanager/CameraManager.s"
 	@echo "... src/include/detectionmanager/DetectionManager.o"
 	@echo "... src/include/detectionmanager/DetectionManager.i"
 	@echo "... src/include/detectionmanager/DetectionManager.s"
+	@echo "... src/include/servermanager/ServerManager.o"
+	@echo "... src/include/servermanager/ServerManager.i"
+	@echo "... src/include/servermanager/ServerManager.s"
+	@echo "... src/include/superstructure/SuperStructure.o"
+	@echo "... src/include/superstructure/SuperStructure.i"
+	@echo "... src/include/superstructure/SuperStructure.s"
 	@echo "... src/include/systemmanager/SystemManager.o"
 	@echo "... src/include/systemmanager/SystemManager.i"
 	@echo "... src/include/systemmanager/SystemManager.s"

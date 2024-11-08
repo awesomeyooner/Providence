@@ -7,7 +7,7 @@ DetectionManager::DetectionManager() : DetectionManager::DetectionManager(aprilt
 DetectionManager::DetectionManager(apriltag_detector_t* det, apriltag_family_t* fam) : detector(det), family(fam){
     detector->quad_decimate = 1.0;    // Decimation factor for faster detection at lower resolutions
     detector->quad_sigma = 0.0;       // Gaussian blur for noise reduction
-    detector->nthreads = 1;           // Number of CPU threads to use
+    detector->nthreads = 4;           // Number of CPU threads to use
     detector->refine_edges = 1;       // Refine edges to improve accuracy
 
     apriltag_detector_add_family(detector, family);
