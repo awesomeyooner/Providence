@@ -15,10 +15,6 @@ class ServerManager{
 
     public:
 
-        SuperStructure *superstructure;
-
-        ServerManager(SuperStructure *superstructure);
-
         void initialize();
 
         void loop();

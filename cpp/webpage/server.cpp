@@ -9,10 +9,9 @@
 std::atomic<bool> running(true);
 
 int main() {
-    SuperStructure superstructure;
-    ServerManager servermanager(&superstructure);
+    ServerManager servermanager;
 
-    std::thread superloop(&SuperStructure::loop, &superstructure);
+    std::thread superloop(&ServerManager::loop, servermanager);
 
     servermanager.initialize();
     superloop.join();
