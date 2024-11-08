@@ -40,6 +40,7 @@ class DetectionManager{
 
         void process(zarray_t* detections);
         void process(cv::Mat* frame);
+        void process(cv::Mat* frame, double* x, double* y, double* z);
 
         void poseToMat(apriltag_pose_t pose, cv::Mat* rvec, cv::Mat* tvec);
 

@@ -5,6 +5,9 @@ using namespace Utility;
 std::shared_ptr<cv::Mat> sharedFrame = std::make_shared<cv::Mat>();
 std::mutex frameMutex;
 
+double tx, ty, tz = 0;
+double rx, ry, rz = 0;
+
 void ServerManager::loop(){
     CameraManager camera(2, cv::CAP_V4L2);
     DetectionManager detector;
@@ -34,13 +37,13 @@ void ServerManager::loop(){
 
         cv::Mat frame = camera.getFrame();
 
-        std::lock_guard<std::mutex> lock(frameMutex);
-        *sharedFrame = frame.clone();
-
         cv::putText(frame, std::to_string(camera.getFramerate()), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
 
         //code goes here
-        detector.process(&frame);
+        detector.process(&frame, &tx, &ty, &tz);
+
+        std::lock_guard<std::mutex> lock(frameMutex);
+        *sharedFrame = frame.clone();
 
         if(!camera.show(frame))
             break;
@@ -57,11 +60,66 @@ void ServerManager::loop(){
 void ServerManager::initialize(){
     crow::SimpleApp app;
 
-    // Route to serve the main HTML file
-    // CROW_ROUTE(app, "/")([](const crow::request&, crow::response& response) {
-    //     response.set_static_file_info_unsafe("../public/index.html");
-    //     response.end();
-    // });
+   
+    app.route_dynamic("/number")([](){
+        crow::json::wvalue data;
+        data["message"] = "time";
+        data["value"] = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+
+        return crow::response(data); 
+    });
+
+    app.route_dynamic("/pose")([](){
+        crow::json::wvalue data;
+        
+        crow::json::wvalue translation;
+            data["translation"]["x"] = tx;
+            data["translation"]["y"] = ty;
+            data["translation"]["z"] = tz; 
+
+        crow::json::wvalue rotation;
+            data["rotation"]["x"] = rx;
+            data["rotation"]["y"] = ry;
+            data["rotation"]["z"] = rz;
+
+        return crow::response(data); 
+    });
+
+    app.route_dynamic("/image")([](){
+        crow::response response;
+
+        response.code = 200;
+        response.set_header("Content-Type", "image/jpeg");
+
+        std::vector<uchar> buffer;
+
+            cv::Mat frame;
+
+            {
+                std::lock_guard<std::mutex> lock(frameMutex);
+
+                frame = sharedFrame->clone();
+
+                if(frame.empty())
+                    frame = cv::imread("../public/picture.jpg");
+            }
+
+            cv::imencode(".jpg", frame, buffer);
+            
+            std::string encodedFrame(buffer.begin(), buffer.end());
+
+            response.write(encodedFrame);
+
+            return response;
+    });
+    
+    CROW_ROUTE(app, "/json")([&]{
+            crow::json::wvalue data;
+            data["message"] = "time";
+            data["value"] = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+
+            return crow::response(data); 
+        });
 
     CROW_ROUTE(app, "/")([](const crow::request&, crow::response& response) {
         std::ifstream file("../public/index.html");
@@ -76,58 +134,6 @@ void ServerManager::initialize(){
             response.write("404: File not found");
         }
         response.end();
-    });
-
-    CROW_ROUTE(app, "/video")([](){
-        std::cout << "Video route accessed!" << std::endl;  // Log to console
-
-        crow::response response;
-
-        response.code = 200;
-        response.set_header("Content-Type", "multipart/x-mixed-replace; boundary=frame");
-
-        std::string body = "--frame\r\n";
-        body += "Content-Type: image/jpeg\r\n";
-
-        // while(true){
-        for(int i = 0; i < 1; i++){
-            std::vector<uchar> buffer;
-
-            cv::Mat frame;
-
-            // {
-            //     std::lock_guard<std::mutex> lock(frameMutex);
-
-            //     if(sharedFrame->empty())
-            //         continue;
-
-            //     frame = sharedFrame->clone();
-            // }
-
-            frame = cv::imread("../public/picture.jpg");
-
-            cv::imencode(".jpg", frame, buffer);
-            
-            std::string encodedFrame(buffer.begin(), buffer.end());
-
-            // Send the initial part of the body (boundary)
-            body += "Content-Length: " + std::to_string(encodedFrame.size()) + "\r\n\r\n";
-            body += encodedFrame + "\r\n";
-            // body += encodedFrame + "\r\n";
-
-            response.body = body;
-
-            body = "--frame\r\nContent-Type: image/jpeg\r\n";
-
-            response.clear();
-
-            std::this_thread::sleep_for(std::chrono::milliseconds(30));
-
-
-            // body = "--frame\r\nContent-Type: image/jpeg\r\n";
-        }
-
-        return response;
     });
 
     CROW_ROUTE(app, "/test")

@@ -23,7 +23,7 @@ const controls = new OrbitControls( camera, renderer.domElement );
 scene.add( new THREE.AxesHelper( 20 ) );
 
 //box
-const geometry = new THREE.BoxGeometry();
+const geometry = new THREE.BoxGeometry(1, 1, 0.2);
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
@@ -35,14 +35,59 @@ scene.add(cube);
 // const point = new THREE.Points(pointGeometry, pointMaterial);
 // scene.add(point)
 
+var x, y, z = 0;
+
 function animate() {
     requestAnimationFrame(animate);
 
-    cube.position.x = 1;
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    cube.position.x = x;
+    cube.position.y = y;
+    cube.position.z = z;
+
+    //cube.rotation.y += 0.01;
 
     renderer.render(scene, camera);
 }
 
 animate();
+
+//=============================================
+
+function updateNumber() {
+    fetch("/number")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("number").innerText = data;
+        });
+}
+
+function updateImage() {
+    fetch("/image")
+        .then(response => response.blob())
+        .then(blob => {
+            const imgElement = document.getElementById("videoStream");
+            imgElement.src = URL.createObjectURL(blob);
+        });
+}
+
+function updatePose(){
+    fetch('/pose')  // Send a GET request to /json
+        .then(response => response.json())  // Parse the JSON response
+        .then(data => {
+            // Access elements of the JSON object
+            x = data.x;
+            y = data.y;
+            z = data.z;
+        })
+        .catch(error => console.error('Error fetching JSON:', error));  // Error handling
+}
+
+function update(){
+    updateNumber();
+    updateImage();
+    updatePose();
+}   
+
+
+
+setInterval(update, 20); // Update every second

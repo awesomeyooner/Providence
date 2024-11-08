@@ -78,6 +78,33 @@ void DetectionManager::process(cv::Mat* frame){
     }
 }
 
+void DetectionManager::process(cv::Mat* frame, double* x, double* y, double* z){
+    cv::Mat gray;
+
+    cv::cvtColor(*frame, gray, cv::COLOR_BGR2GRAY);
+
+    zarray_t* detections = getDetections(gray);
+
+    for(int i = 0; i < zarray_size(detections); i++){
+        apriltag_detection_t* detection;
+
+        zarray_get(detections, i, &detection);
+
+        info.det = detection;
+
+        apriltag_pose_t pose;
+
+        double error = estimate_tag_pose(&info, &pose);
+
+        *x = pose.t->data[0];
+        *y = pose.t->data[1];
+        *z = pose.t->data[2];
+        
+        drawBox(frame, pose);
+        putID(frame, detection);
+    }
+}
+
 void DetectionManager::poseToMat(apriltag_pose_t pose, cv::Mat* rvec, cv::Mat* tvec){
     cv::Mat R = (cv::Mat_<double>(3, 3) << 
         pose.R->data[0], pose.R->data[1], pose.R->data[2],
