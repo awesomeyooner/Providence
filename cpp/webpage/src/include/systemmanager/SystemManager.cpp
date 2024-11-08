@@ -16,6 +16,19 @@ std::vector<int> SystemManager::getTemps(){
     return temperatures;
 }
 
+double SystemManager::getAverageTemp(){
+    std::vector<int> temps = getTemps();
+
+    double total = 0;
+
+    for(int i = 0; i < temps.size(); i++){
+        total += temps.at(i);
+    }
+
+    return total / temps.size();
+}
+
+
 void SystemManager::printTemps(){
     std::vector<int> temps = getTemps();
 

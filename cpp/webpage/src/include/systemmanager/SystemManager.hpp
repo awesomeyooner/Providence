@@ -16,7 +16,8 @@ class SystemManager{
         SystemManager();
 
         static std::vector<int> getTemps();
-
+        static double getAverageTemp();
+        
         static void printTemps();
 
         static float getCpuUsage();

@@ -1224,6 +1224,7 @@ CMakeFiles/server.dir/server.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/we
   /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.hpp \
   /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.hpp \
   /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.hpp \
+  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.hpp \
   /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.hpp
 
 CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.cpp \
@@ -3302,7 +3303,8 @@ CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: /home/dev/D
   /usr/local/include/apriltag/apriltag_math.h \
   /usr/local/include/apriltag/apriltag_pose.h \
   /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.hpp \
-  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.hpp
+  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.hpp \
+  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.hpp
 
 CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o: /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.cpp \
   /usr/include/stdc-predef.h \

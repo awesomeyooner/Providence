@@ -1019,4 +1019,5 @@ CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: \
  /usr/local/include/apriltag/apriltag_math.h \
  /usr/local/include/apriltag/apriltag_pose.h \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../cameramanager/CameraManager.hpp \
- /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../detectionmanager/DetectionManager.hpp
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../detectionmanager/DetectionManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../systemmanager/SystemManager.hpp

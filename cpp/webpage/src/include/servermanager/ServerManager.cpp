@@ -5,8 +5,11 @@ using namespace Utility;
 std::shared_ptr<cv::Mat> sharedFrame = std::make_shared<cv::Mat>();
 std::mutex frameMutex;
 
+//sendable values
 double tx, ty, tz = 0;
 double rx, ry, rz = 0;
+
+double framerate = 0;
 
 void ServerManager::loop(){
     CameraManager camera(2, cv::CAP_V4L2);
@@ -37,12 +40,10 @@ void ServerManager::loop(){
 
         cv::Mat frame = camera.getFrame();
 
-        cv::putText(frame, std::to_string(camera.getFramerate()), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
+        framerate = camera.getFramerate();
+        cv::putText(frame, std::to_string(framerate), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
 
         //code goes here
-        matd_t t;
-        matd_t R;
-
         detector.process(&frame, &tx, &ty, &tz, &rx, &ry, &rz);
 
         std::lock_guard<std::mutex> lock(frameMutex);
@@ -64,10 +65,9 @@ void ServerManager::initialize(){
     crow::SimpleApp app;
 
    
-    app.route_dynamic("/number")([](){
+    app.route_dynamic("/framerate")([](){
         crow::json::wvalue data;
-        data["message"] = "time";
-        data["value"] = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+        data["framerate"] = std::round(framerate);
 
         return crow::response(data); 
     });
@@ -114,10 +114,10 @@ void ServerManager::initialize(){
             return response;
     });
     
-    CROW_ROUTE(app, "/json")([&]{
+    CROW_ROUTE(app, "/stats")([]{
             crow::json::wvalue data;
-            data["message"] = "time";
-            data["value"] = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+            data["cpu"] = SystemManager::getCpuUsage();
+            data["temp"] = SystemManager::getAverageTemp();
 
             return crow::response(data); 
         });

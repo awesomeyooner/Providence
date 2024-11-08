@@ -1018,5 +1018,6 @@ CMakeFiles/server.dir/server.cpp.o: \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/SuperStructure.hpp \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../cameramanager/CameraManager.hpp \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../detectionmanager/DetectionManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../systemmanager/SystemManager.hpp \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.hpp \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.hpp

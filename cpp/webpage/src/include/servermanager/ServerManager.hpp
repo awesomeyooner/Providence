@@ -10,6 +10,7 @@
 #include <iostream>
 #include "../util/Utility.hpp"
 #include "../superstructure/SuperStructure.hpp"
+#include "../systemmanager/SystemManager.hpp"
 
 class ServerManager{
 

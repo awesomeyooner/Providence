@@ -58,11 +58,20 @@ animate();
 
 //=============================================
 
-function updateNumber() {
-    fetch("/number")
-        .then(response => response.text())
+function updateStats(){
+    fetch("/stats")
+        .then(response => response.json())
         .then(data => {
-            document.getElementById("number").innerText = data;
+            document.getElementById("cpu").innerText = data.cpu;
+            document.getElementById("temp").innerText = data.temp;
+        });
+}
+
+function updateFramerate() {
+    fetch("/framerate")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("framerate").innerText = data.framerate;
         });
 }
 
@@ -92,7 +101,7 @@ function updatePose(){
 }
 
 function update(){
-    updateNumber();
+    updateFramerate();
     updateImage();
     updatePose();
 }   
