@@ -58,12 +58,16 @@ animate();
 
 //=============================================
 
+document.querySelector('#stats').addEventListener('click', updateStats);
+
 function updateStats(){
+    console.log("poop");
+
     fetch("/stats")
         .then(response => response.json())
         .then(data => {
-            document.getElementById("cpu").innerText = data.cpu;
-            document.getElementById("temp").innerText = data.temp;
+            document.getElementById("cpu").innerText = Math.floor(data.cpu);
+            document.getElementById("temp").innerText = Math.floor(data.temp);
         });
 }
 
@@ -71,7 +75,7 @@ function updateFramerate() {
     fetch("/framerate")
         .then(response => response.json())
         .then(data => {
-            document.getElementById("framerate").innerText = data.framerate;
+            document.getElementById("framerate").innerText = Math.floor(data.framerate);
         });
 }
 

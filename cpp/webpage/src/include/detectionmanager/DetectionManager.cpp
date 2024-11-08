@@ -78,7 +78,7 @@ void DetectionManager::process(cv::Mat* frame){
     }
 }
 
-void DetectionManager::process(cv::Mat* frame, double* tx, double* ty, double* tz, double* rx, double* ry, double* rz){
+void DetectionManager::process(cv::Mat* frame, std::vector<double>* trans, std::vector<double>* rot){
     cv::Mat gray;
 
     cv::cvtColor(*frame, gray, cv::COLOR_BGR2GRAY);
@@ -110,13 +110,13 @@ void DetectionManager::process(cv::Mat* frame, double* tx, double* ty, double* t
 
         cv::Mat cameraToTag = -R * t;
 
-        *tx = cameraToTag.at<double>(0, 0);
-        *ty = cameraToTag.at<double>(0, 1);
-        *tz = cameraToTag.at<double>(0, 2);
+        trans->at(0) = cameraToTag.at<double>(0, 0);
+        trans->at(1) = cameraToTag.at<double>(0, 1);
+        trans->at(2) = cameraToTag.at<double>(0, 2);
 
-        *rx = atan2(R.at<double>(2, 1), R.at<double>(2, 2));  // Roll
-        *ry = atan2(-R.at<double>(2, 0) , sqrt((R.at<double>(2, 1) * R.at<double>(2, 1)) + (R.at<double>(2, 2) * R.at<double>(2, 2))));                  // Pitch
-        *rz = atan2(R.at<double>(1, 0), R.at<double>(0, 0));   // Yaw
+        rot->at(0) = atan2(R.at<double>(2, 1), R.at<double>(2, 2));  // Roll
+        rot->at(1) = atan2(-R.at<double>(2, 0) , sqrt((R.at<double>(2, 1) * R.at<double>(2, 1)) + (R.at<double>(2, 2) * R.at<double>(2, 2))));                  // Pitch
+        rot->at(2) = atan2(R.at<double>(1, 0), R.at<double>(0, 0));   // Yaw
 
         // *tx = pose.t->data[0];
         // *ty = pose.t->data[1];

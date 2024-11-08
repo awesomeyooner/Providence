@@ -6,14 +6,13 @@ std::shared_ptr<cv::Mat> sharedFrame = std::make_shared<cv::Mat>();
 std::mutex frameMutex;
 
 //sendable values
-double tx, ty, tz = 0;
-double rx, ry, rz = 0;
+std::vector<double> translation = {0, 0, 0};
+std::vector<double> rotation = {0, 0, 0};
 
-double framerate = 0;
+CameraManager camera(2, cv::CAP_V4L2);
+DetectionManager detector;
 
 void ServerManager::loop(){
-    CameraManager camera(2, cv::CAP_V4L2);
-    DetectionManager detector;
 
     detector.setIntrinsics(
         730.0688629, 
@@ -40,19 +39,16 @@ void ServerManager::loop(){
 
         cv::Mat frame = camera.getFrame();
 
-        framerate = camera.getFramerate();
-        cv::putText(frame, std::to_string(framerate), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
+        cv::putText(frame, std::to_string(camera.getFramerate()), cv::Point(0, 40), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 0), 2, cv::LINE_AA);
 
         //code goes here
-        detector.process(&frame, &tx, &ty, &tz, &rx, &ry, &rz);
+        detector.process(&frame, &translation, &rotation);
 
         std::lock_guard<std::mutex> lock(frameMutex);
         *sharedFrame = frame.clone();
 
         if(!camera.show(frame))
             break;
-
-        //std::cout << camera.getFramerate() << std::endl;
 
         if(cv::waitKey(10) == 27)
             break;
@@ -63,11 +59,10 @@ void ServerManager::loop(){
 
 void ServerManager::initialize(){
     crow::SimpleApp app;
-
    
     app.route_dynamic("/framerate")([](){
         crow::json::wvalue data;
-        data["framerate"] = std::round(framerate);
+        data["framerate"] = camera.getFramerate();
 
         return crow::response(data); 
     });
@@ -75,13 +70,13 @@ void ServerManager::initialize(){
     app.route_dynamic("/pose")([](){
         crow::json::wvalue data;
         
-            data["translation"]["x"] = tx;
-            data["translation"]["y"] = ty;
-            data["translation"]["z"] = tz;
+            data["translation"]["x"] = translation.at(0);
+            data["translation"]["y"] = translation.at(1);
+            data["translation"]["z"] = translation.at(2);
 
-            data["rotation"]["x"] = rx;
-            data["rotation"]["y"] = ry;
-            data["rotation"]["z"] = rz;
+            data["rotation"]["x"] = rotation.at(0);
+            data["rotation"]["y"] = rotation.at(1);
+            data["rotation"]["z"] = rotation.at(2);
 
         return crow::response(data); 
     });
@@ -94,34 +89,35 @@ void ServerManager::initialize(){
 
         std::vector<uchar> buffer;
 
-            cv::Mat frame;
+        cv::Mat frame;
 
-            {
-                std::lock_guard<std::mutex> lock(frameMutex);
+        {
+            std::lock_guard<std::mutex> lock(frameMutex);
 
-                frame = sharedFrame->clone();
+            frame = sharedFrame->clone();
 
-                if(frame.empty())
-                    frame = cv::imread("../public/picture.jpg");
-            }
+            if(frame.empty())
+                frame = cv::imread("../public/picture.jpg");
+        }
 
-            cv::imencode(".jpg", frame, buffer);
-            
-            std::string encodedFrame(buffer.begin(), buffer.end());
+        cv::imencode(".jpg", frame, buffer);
+        
+        std::string encodedFrame(buffer.begin(), buffer.end());
 
-            response.write(encodedFrame);
+        response.write(encodedFrame);
 
-            return response;
+        return response;
     });
     
     CROW_ROUTE(app, "/stats")([]{
-            crow::json::wvalue data;
-            data["cpu"] = SystemManager::getCpuUsage();
-            data["temp"] = SystemManager::getAverageTemp();
+        crow::json::wvalue data;
+        data["cpu"] = SystemManager::getCpuUsage();
+        data["temp"] = SystemManager::getAverageTemp();
 
-            return crow::response(data); 
-        });
+        return crow::response(data); 
+    });
 
+    //load page and files
     CROW_ROUTE(app, "/")([](const crow::request&, crow::response& response) {
         std::ifstream file("../public/index.html");
         if (file) {
@@ -135,11 +131,6 @@ void ServerManager::initialize(){
             response.write("404: File not found");
         }
         response.end();
-    });
-
-    CROW_ROUTE(app, "/test")
-    ([]() {
-        return "Test route is working!";
     });
 
     CROW_ROUTE(app, "/<path>")([](const crow::request&, crow::response& response, std::string path) {
