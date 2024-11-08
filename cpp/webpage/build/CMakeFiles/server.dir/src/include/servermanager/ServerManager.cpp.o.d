@@ -884,8 +884,6 @@ CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: \
  /usr/include/crow/version.h /usr/include/crow/app.h \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/this_thread_sleep.h \
  /usr/include/crow/middlewares/cors.h \
- /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../util/Utility.hpp \
- /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/SuperStructure.hpp \
  /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
@@ -1018,6 +1016,7 @@ CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o: \
  /usr/local/include/apriltag/tag36h11.h \
  /usr/local/include/apriltag/apriltag_math.h \
  /usr/local/include/apriltag/apriltag_pose.h \
- /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../cameramanager/CameraManager.hpp \
- /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../superstructure/../detectionmanager/DetectionManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../cameramanager/CameraManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../detectionmanager/DetectionManager.hpp \
+ /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../util/Utility.hpp \
  /home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/../systemmanager/SystemManager.hpp

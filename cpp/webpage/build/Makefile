@@ -225,30 +225,6 @@ src/include/servermanager/ServerManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.s
 .PHONY : src/include/servermanager/ServerManager.cpp.s
 
-src/include/superstructure/SuperStructure.o: src/include/superstructure/SuperStructure.cpp.o
-.PHONY : src/include/superstructure/SuperStructure.o
-
-# target to build an object file
-src/include/superstructure/SuperStructure.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o
-.PHONY : src/include/superstructure/SuperStructure.cpp.o
-
-src/include/superstructure/SuperStructure.i: src/include/superstructure/SuperStructure.cpp.i
-.PHONY : src/include/superstructure/SuperStructure.i
-
-# target to preprocess a source file
-src/include/superstructure/SuperStructure.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.i
-.PHONY : src/include/superstructure/SuperStructure.cpp.i
-
-src/include/superstructure/SuperStructure.s: src/include/superstructure/SuperStructure.cpp.s
-.PHONY : src/include/superstructure/SuperStructure.s
-
-# target to generate assembly for a file
-src/include/superstructure/SuperStructure.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.s
-.PHONY : src/include/superstructure/SuperStructure.cpp.s
-
 src/include/systemmanager/SystemManager.o: src/include/systemmanager/SystemManager.cpp.o
 .PHONY : src/include/systemmanager/SystemManager.o
 
@@ -294,9 +270,6 @@ help:
 	@echo "... src/include/servermanager/ServerManager.o"
 	@echo "... src/include/servermanager/ServerManager.i"
 	@echo "... src/include/servermanager/ServerManager.s"
-	@echo "... src/include/superstructure/SuperStructure.o"
-	@echo "... src/include/superstructure/SuperStructure.i"
-	@echo "... src/include/superstructure/SuperStructure.s"
 	@echo "... src/include/systemmanager/SystemManager.o"
 	@echo "... src/include/systemmanager/SystemManager.i"
 	@echo "... src/include/systemmanager/SystemManager.s"

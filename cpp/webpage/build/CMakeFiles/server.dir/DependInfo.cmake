@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/cameramanager/CameraManager.cpp" "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/cameramanager/CameraManager.cpp.o.d"
   "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/detectionmanager/DetectionManager.cpp" "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o.d"
   "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/servermanager/ServerManager.cpp" "CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o.d"
-  "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/superstructure/SuperStructure.cpp" "CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o.d"
   "/home/dev/Documents/GitHub/Providence/cpp/webpage/src/include/systemmanager/SystemManager.cpp" "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o" "gcc" "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o.d"
   )
 

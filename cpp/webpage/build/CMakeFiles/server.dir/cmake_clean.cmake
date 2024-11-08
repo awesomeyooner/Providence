@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/src/include/detectionmanager/DetectionManager.cpp.o.d"
   "CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o"
   "CMakeFiles/server.dir/src/include/servermanager/ServerManager.cpp.o.d"
-  "CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o"
-  "CMakeFiles/server.dir/src/include/superstructure/SuperStructure.cpp.o.d"
   "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o"
   "CMakeFiles/server.dir/src/include/systemmanager/SystemManager.cpp.o.d"
   "server"

@@ -2,7 +2,6 @@
 #include "src/include/detectionmanager/DetectionManager.hpp"
 #include "src/include/servermanager/ServerManager.hpp"
 #include "src/include/systemmanager/SystemManager.hpp"
-#include "src/include/superstructure/SuperStructure.hpp"
 #include <thread>
 #include <atomic>
 
