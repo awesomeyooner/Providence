@@ -20,6 +20,7 @@
 #include "apriltag/tag36h11.h"
 #include "apriltag/apriltag_math.h"
 #include "apriltag/apriltag_pose.h"
+#include "mrcal/mrcal.h"
 #include "../cameramanager/CameraManager.hpp"
 #include "../detectionmanager/DetectionManager.hpp"
 #include "../util/Utility.hpp"
