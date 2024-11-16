@@ -1,11 +1,13 @@
 #include "CameraManager.hpp"
 
-CameraManager::CameraManager(int index) : cap(index) {
+CameraManager::CameraManager(int index) : cap(index){
     this->index = index;
+    this->name = "camera_" + index;
     config();
 }
 CameraManager::CameraManager(int index, cv::VideoCaptureAPIs type) : cap(index, type) {
     this->index = index;
+    this->name = "camera_" + index;
     config();
 }
 

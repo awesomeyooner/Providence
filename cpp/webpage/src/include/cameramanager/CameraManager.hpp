@@ -14,7 +14,6 @@
 class CameraManager{
 
     public:
-        cv::VideoCapture cap;
 
         CameraManager(int index);
         CameraManager(int index, cv::VideoCaptureAPIs type);
@@ -38,7 +37,9 @@ class CameraManager{
         void reopen();
 
     private:
+        cv::VideoCapture cap;
         int index;
+        std::string name;
 
         double framerate = 0;
         std::chrono::_V2::system_clock::time_point previousTimestamp = std::chrono::high_resolution_clock::now();
